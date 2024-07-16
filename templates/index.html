@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Insurance Prediction</title>
+</head>
+<body>
+    <h1>Welcome to the Medical Insurance Prediction FLASK-JSON</h1>
+    
+    <form method="POST" action="/">
+        <textarea name="data" rows="10" cols="50" placeholder='Enter JSON data here... (e.g., {"data": [{"age": 24, "bmi": 29.83, "children": 0, "smoker": "no"}]} )'></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if output %}
+        <h2>Prediction Results:</h2>
+        <p>{{ output }}</p>
+    {% endif %}
+</body>
+</html>
