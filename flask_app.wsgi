@@ -1,5 +1,13 @@
+# flask_app.wsgi
+
 import sys
-path = '/mnt/data/insurance-prediction-2'  # Update the path to match the directory structure of your project on Render.com
-if path not in sys.path:
-    sys.path.append(path)
-from app import app as application
+import os
+
+# Insert the project directory to sys.path dynamically
+project_home = os.path.dirname(os.path.abspath(__file__))
+if project_home not in sys.path:
+    sys.path.insert(0, project_home)
+
+# Define the WSGI application object
+from app import app as application  # Import your Flask app from app.py
+
